@@ -25,9 +25,47 @@
 				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration></Configurations>
 	<Files>
 		<Filter Name="Header Files" Filter="fi;fd"/>
-		<Filter Name="Resource Files" Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"/>
+		<Filter Name="Lib">
+		<File RelativePath=".\Lib\P01ABF.FOR"/>
+		<File RelativePath=".\Lib\P01ABZ.FOR"/>
+		<File RelativePath=".\Lib\S14ABF.FOR"/>
+		<File RelativePath=".\Lib\S17DEF.FOR"/>
+		<File RelativePath=".\Lib\S17DER.FOR"/>
+		<File RelativePath=".\Lib\S17DES.FOR"/>
+		<File RelativePath=".\Lib\S17DET.FOR"/>
+		<File RelativePath=".\Lib\S17DEU.FOR"/>
+		<File RelativePath=".\Lib\S17DEV.FOR"/>
+		<File RelativePath=".\Lib\S17DEW.FOR"/>
+		<File RelativePath=".\Lib\S17DEX.FOR"/>
+		<File RelativePath=".\Lib\S17DEY.FOR"/>
+		<File RelativePath=".\Lib\S17DEZ.FOR"/>
+		<File RelativePath=".\Lib\S17DGF.FOR"/>
+		<File RelativePath=".\Lib\S17DGR.FOR"/>
+		<File RelativePath=".\Lib\S17DGS.FOR"/>
+		<File RelativePath=".\Lib\S17DGT.FOR"/>
+		<File RelativePath=".\Lib\S17DGU.FOR"/>
+		<File RelativePath=".\Lib\S17DGV.FOR"/>
+		<File RelativePath=".\Lib\S17DGW.FOR"/>
+		<File RelativePath=".\Lib\S17DGX.FOR"/>
+		<File RelativePath=".\Lib\S17DGY.FOR"/>
+		<File RelativePath=".\Lib\S17DGZ.FOR"/>
+		<File RelativePath=".\Lib\S17DLF.FOR"/>
+		<File RelativePath=".\Lib\S17DLY.FOR"/>
+		<File RelativePath=".\Lib\S17DLZ.FOR"/>
+		<File RelativePath=".\Lib\S18DCY.FOR"/>
+		<File RelativePath=".\Lib\S18DCZ.FOR"/>
+		<File RelativePath=".\Lib\X02AJF.FOR"/>
+		<File RelativePath=".\Lib\X02AKF.FOR"/>
+		<File RelativePath=".\Lib\X02ALF.FOR"/>
+		<File RelativePath=".\Lib\X02BBF.FOR"/>
+		<File RelativePath=".\Lib\X02BHF.FOR"/>
+		<File RelativePath=".\Lib\X02BJF.FOR"/>
+		<File RelativePath=".\Lib\X02BKF.FOR"/>
+		<File RelativePath=".\Lib\X02BLF.FOR"/>
+		<File RelativePath=".\Lib\X04AAF.FOR"/>
+		<File RelativePath=".\Lib\X04BAF.FOR"/></Filter>
+		<Filter Name="Resource Files" Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+		<File RelativePath=".\module.f90"/></Filter>
 		<Filter Name="Source Files" Filter="f90;for;f;fpp;ftn;def;odl;idl">
-		<File RelativePath=".\main.f90"/>
-		<File RelativePath=".\module.f90"/>
-		<File RelativePath=".\S17DLF.FOR"/></Filter></Files>
+		<File RelativePath=".\main.f90"/></Filter></Files>
 	<Globals/></VisualStudioProject>

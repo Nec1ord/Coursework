@@ -4,23 +4,27 @@ program coursework
 5   format(5(2x, f15.10))
     
     ! x : (start_x, end_x)
+    open(1, file = 'x.dat')
     step = (end_x - start_x) / (Nx);
     do i = 1, Nx
         x(i) = start_x + i * step
+        write(1, 5) x(i)
     end do
     
     ! y : (start_y, end_y)
+    open(2, file = 'y.dat')
     step = (end_y - start_y) / (Ny);
     do i = 1, Ny
         y(i) = start_y + i * step
+        write(2, 5) y(i)
     end do
     
     ! count U, V, T
     do i = 1, Nx    
         do j = 1, Ny
-            r = sqrt((x(i) - start_x)**2 + (y(j) - start_y)**2)
-            U_xy(i, j) = ( complex_i * gamma * (x(i) - start_x) ) / (4d0 * kappa * (lamda + 2 * mu) * (kappa1 - complex_i * k1) * r)
-            V_xy(i, j) = ( complex_i * gamma * (y(i) - start_y) ) / (4d0 * kappa * (lamda + 2 * mu) * (kappa1 - complex_i * k1) * r)
+            r = sqrt((x(i) - x0)**2 + (y(j) - y0)**2)
+            U_xy(i, j) = ( complex_i * gamma * (x(i) - x0) ) / (4d0 * kappa * (lamda + 2 * mu) * (kappa1 - complex_i * k1) * r)
+            V_xy(i, j) = ( complex_i * gamma * (y(i) - y0) ) / (4d0 * kappa * (lamda + 2 * mu) * (kappa1 - complex_i * k1) * r)
             T_xy(i, j) = -(complex_i) / (4d0 * kappa)
             
             call S17DLF(1, 0d0, r * sqrt(kappa1),         2, 'u', Hankel_1, NZ, IFAIL)
@@ -40,7 +44,6 @@ program coursework
     do i = 1, Nx
         do j = 1, Ny
             write(6, 5) U_xy(i, j)
-            print 5, U_xy(i, j)         ! debug
         end do
     end do
     
@@ -49,7 +52,6 @@ program coursework
     do i = 1, Nx
         do j = 1, Ny
             write(6, 5) V_xy(i, j)
-            print 5, V_xy(i, j)         ! debug
         end do
     end do
     
@@ -58,7 +60,6 @@ program coursework
     do i = 1, Nx
         do j = 1, Ny
             write(6, 5) T_xy(i, j)
-            print 5, T_xy(i, j)         ! debug
         end do
     end do
     
