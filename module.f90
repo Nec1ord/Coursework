@@ -8,24 +8,24 @@ MODULE my_module
     real*8      r
     
     ! const
-    integer*2,  parameter:: Nx      = 200
-    integer*2,  parameter:: Ny      = 200
-    real*8,     parameter:: start_x = -50d0
-    real*8,     parameter:: start_y = -50d0
-    real*8,     parameter:: end_x   = 50d0
-    real*8,     parameter:: end_y   = 50d0
-    real*8,     parameter:: x0      = 20.11d0
-    real*8,     parameter:: y0      = 20.43d0
-    real*8,     parameter:: omega   = 1d0
-    real*8,     parameter:: lambda  = 1d0
-    real*8,     parameter:: mu      = 1d0
-    real*8,     parameter:: gamma   = 1d0
+    integer*2,  parameter:: Nx          = 500
+    integer*2,  parameter:: Ny          = 500
+    real*8,     parameter:: start_x     = -100d0
+    real*8,     parameter:: start_y     = -100d0
+    real*8,     parameter:: end_x       = 100d0
+    real*8,     parameter:: end_y       = 100d0
+    real*8,     parameter:: x0          = 20.11d0
+    real*8,     parameter:: y0          = 20.43d0
+    real*8,     parameter:: omega       = 2.5d0
+    real*8,     parameter:: p           = 1.21d0
+    real*8,     parameter:: lambda      = 10d0
+    real*8,     parameter:: mu          = 86.2d0
+    real*8,     parameter:: gamma       = (3 * lambda + 2 * mu) * 2d0
     complex*16, parameter:: complex_i   = (0d0, 1d0)
-    complex*16, parameter:: kappa       = 1d0
-    complex*16, parameter:: k           = 1d0
-    
-    complex*16, parameter:: kappa1      = (k**2) / (lambda + 2 * mu)
-    complex*16, parameter:: k1          = (omega) / (kappa)
+    complex*16, parameter:: kappa       = 30d0
+    complex*16, parameter:: k           = p * omega**2 
+    complex*16, parameter:: kappa1      = k / (lambda + 2 * mu)
+    complex*16, parameter:: k1          = omega / kappa
     
     ! arrays
     real*8,     dimension(Nx):: x
