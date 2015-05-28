@@ -18,17 +18,18 @@ program coursework
     
     ! y : (start_y, end_y)
     step = (end_y - start_y) / Ny
-    y(1) = start_y
+    y(1) = 10d0!start_y
     do i = 2, Ny
-        y(i) = y(i-1) + step
+        y(i) = 0d0!y(i-1) + step
     end do
     
+    j=1
     ! count U, V, T
     do i = 1, Nx    
-        do j = 1, Ny
+!        do j = 1, Ny
             r = sqrt((x(i) - x0)**2 + (y(j) - y0)**2)
             U_xy(i, j) = ( complex_i * gamma * (x(i) - x0) ) / (4d0 * kappa * (lamda + 2 * mu) * (kappa1 - complex_i * k1) * r)
-            V_xy(i, j) = ( complex_i * gamma * (y(i) - y0) ) / (4d0 * kappa * (lamda + 2 * mu) * (kappa1 - complex_i * k1) * r)
+            V_xy(i, j) = ( complex_i * gamma * (y(j) - y0) ) / (4d0 * kappa * (lamda + 2 * mu) * (kappa1 - complex_i * k1) * r)
             T_xy(i, j) = -complex_i / (4d0 * kappa)
             
             call S17DLF(1, 0d0, r * sqrt(kappa1),         2, 'u', Hankel_1, NZ, IFAIL)
@@ -39,19 +40,21 @@ program coursework
             
             call S17DLF(1, 0d0, r * sqrt(k1 * complex_i), 1, 'u', Hankel_2, NZ, IFAIL)
             
+            
             T_xy(i, j) = T_xy(i, j) * Hankel_2(1)
-        end do
+ !       end do
     end do
     
     ! write x, y, U_xy, V_xy, T_xy
     do i = 1, Nx
         write(2, 1) x(i)
         write(3, 1) y(i)
-        do j = 1, Ny
-            write(4, 1) U_xy(i, j)
-            write(5, 1) V_xy(i, j)
-            write(6, 1) T_xy(i, j)
-        end do
+        j=1
+  !      do j = 1, Ny
+            write(4, 1) abs(U_xy(i, j))
+            write(5, 1) abs(V_xy(i, j))
+            write(6, 1) abs(T_xy(i, j))
+  !      end do
     end do    
     
     pause 1
